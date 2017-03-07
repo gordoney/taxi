@@ -1,0 +1,16 @@
+.features {
+    background-color: $gray;
+    padding: 0;
+}
+
+@media (max-width: $mobile-device-width-point) {
+    .features {
+        padding: 0 25px;
+    }
+}
+
+@media (max-width: $small-mobile-device-width-point) {
+    .features {
+        padding: 0 15px;
+    }
+}

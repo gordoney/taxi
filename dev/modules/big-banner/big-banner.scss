@@ -1,0 +1,111 @@
+.big-banner {
+    background-image: url('./map1920.jpg');
+    background-position: center center;
+    padding: 65px 0 155px 0;
+    color: $white;
+
+    &__container {
+        @include container;
+    }
+
+    &__row {
+        @include row;
+    }
+
+    &__phone {
+        height: 750px;
+        @include col(14, 6, 5, 5, 6);
+        background-image: url('./phone.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        @include push(5, 9, 2, 2, 2);
+    }
+
+    &__info {
+        @include col(0, 14, 13, 13, 13);
+        @include push(0, 5, 4, 4, 3);
+    }
+
+    &__info-text {
+        background-color: $orange;
+        font-size: 48px;
+        text-align: center;
+        padding: 25px 70px;
+        box-shadow: 5px 5px 8px $black-light;
+        line-height: 1.4;
+        font-weight: 300;
+        text-transform: uppercase;
+        border-radius: 4px;
+        margin-bottom: 20px;
+
+        &:first-letter {
+            font-size: 62px;
+        }
+    }
+}
+
+@media (max-width: $large-device-width-point) {
+    .big-banner {
+        padding: 25px 0;
+
+        &__info-text {
+            background-color: $orange;
+            font-size: 34px;
+
+            &:first-letter {
+                font-size: 46px;
+            }
+        }
+
+        &__phone {height: 460px;}
+    }
+}
+
+@media (max-width: $small-device-width-point) {
+    .big-banner {
+        &__info-text {
+            font-size: 28px;
+            padding: 25px 60px;
+
+            &:first-letter {
+                font-size: 38px;
+            }
+        }
+    }
+}
+
+@media (max-width: $tablet-device-width-point) {
+    .big-banner {
+        &__row {
+            flex-direction: column;
+        }
+
+        &__phone {
+            height: 350px;
+        }
+
+        &__info-text {
+            font-size: 20px;
+            padding: 15px 60px;
+            line-height: 1.6;
+
+            &:first-letter {
+                font-size: 28px;
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile-device-width-point) {
+    .big-banner {
+        background-image: url('./background-mobile.jpg');
+
+        &__info {
+            display: none;
+        }
+
+        &__phone {
+            height: 470px;
+        }
+    }
+}

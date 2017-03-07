@@ -1,0 +1,29 @@
+.payment-logos {
+    text-align: center;
+    background-color: $gray;
+    padding: 20px 0;
+
+    &__logo {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0 40px;
+    }
+
+    &__img {
+        height: 50px;
+    }
+}
+
+@media (max-width: $large-device-width-point) {
+    .payment-logos {
+        &__img {
+            height: 40px;
+        }
+    }
+}
+
+@media (max-width: $tablet-device-width-point) {
+    .payment-logos {
+        display: none;
+    }
+}

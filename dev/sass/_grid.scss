@@ -1,0 +1,147 @@
+@mixin container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    max-width: 100%;
+
+    @media (min-width: $mobile-width-point-min) {
+        width: $tablet-width;
+    }
+
+    @media (min-width: $tablet-width-point-min) {
+        width: $small-device-width;
+    }
+
+    @media (min-width: $small-device-width-point-min) {
+        width: $large-device-width;
+    }
+
+    @media (min-width: $large-device-width-point-min) {
+        width: $wide-device-width;
+    }
+}
+
+@mixin container-narrow {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    max-width: 100%;
+
+    @media (min-width: $mobile-width-point-min) {
+        width: $tablet-width-narrow;
+    }
+
+    @media (min-width: $tablet-width-point-min) {
+        width: $small-device-width-narrow;
+    }
+
+    @media (min-width: $small-device-width-point-min) {
+        width: $large-device-width-narrow;
+    }
+
+    @media (min-width: $large-device-width-point-min) {
+        width: $wide-device-width-narrow;
+    }
+}
+
+@mixin container-fluid {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@mixin row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+@mixin no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+
+    & > .col,
+    & > [class*="col-"] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+}
+
+@mixin col($xs, $sm, $md, $lg, $wide:0) {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    box-sizing: border-box;
+    flex: 0 0 100/$columnsQuantity*$xs + %;
+    max-width: 100/$columnsQuantity*$xs + %;
+
+    @media (min-width: $mobile-width-point-min) {
+        flex: 0 0 100/$columnsQuantity*$sm + %;
+        max-width: 100/$columnsQuantity*$sm + %;
+    }
+
+    @media (min-width: $tablet-width-point-min) {
+        flex: 0 0 100/$columnsQuantity*$md + %;
+        max-width: 100/$columnsQuantity*$md + %;
+    }
+
+    @media (min-width: $small-device-width-point-min) {
+        flex: 0 0 100/$columnsQuantity*$lg + %;
+        max-width: 100/$columnsQuantity*$lg + %;
+    }
+
+    @media (min-width: $large-device-width-point-min) {
+        flex: 0 0 100/$columnsQuantity*$wide + %;
+        max-width: 100/$columnsQuantity*$wide + %;
+    }
+}
+
+@mixin push($xs, $sm, $md, $lg, $wide:0) {
+    position: relative;
+    left: 100/$columnsQuantity*$xs + %;
+
+    @media (min-width: $mobile-width-point-min) {
+        left: 100/$columnsQuantity*$sm + %;
+    }
+
+    @media (min-width: $tablet-width-point-min) {
+        left: 100/$columnsQuantity*$md + %;
+    }
+
+    @media (min-width: $small-device-width-point-min) {
+        left: 100/$columnsQuantity*$lg + %;
+    }
+
+    @media (min-width: $large-device-width-point-min) {
+        left: 100/$columnsQuantity*$wide + %;
+    }
+}
+
+@mixin pull($xs, $sm, $md, $lg, $wide:0) {
+    position: relative;
+    right: 100/$columnsQuantity*$xs + %;
+
+    @media (min-width: $mobile-width-point-min) {
+        right: 100/$columnsQuantity*$sm + %;
+    }
+
+    @media (min-width: $tablet-width-point-min) {
+        right: 100/$columnsQuantity*$md + %;
+    }
+
+    @media (min-width: $small-device-width-point-min) {
+        right: 100/$columnsQuantity*$lg + %;
+    }
+
+    @media (min-width: $large-device-width-point-min) {
+        right: 100/$columnsQuantity*$wide + %;
+    }
+}

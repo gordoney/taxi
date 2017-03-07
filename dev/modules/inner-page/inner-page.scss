@@ -1,0 +1,36 @@
+.inner-page {
+    background-color: $gray;
+    padding: 20px 0;
+    font-size: 28px;
+    color: $gray-dark;
+
+    &__container {
+        @include container-narrow;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    p {
+        padding-bottom: 10px;
+    }
+
+    &__form {
+        width: 40%;
+    }
+}
+
+@media (max-width: $large-device-width-point) {
+    .inner-page {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: $small-device-width-point) {
+    .inner-page {
+        font-size: 17px;
+
+        p {
+            padding-bottom: 7px;
+        }
+    }
+}

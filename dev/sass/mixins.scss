@@ -1,0 +1,59 @@
+@mixin icomoon {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin link {
+    text-decoration: none;
+    color: $black;
+    transition: 0.2s;
+
+    &:hover {
+        color: $green;
+    }
+}
+
+@mixin link-decoration ($color, $height, $bottom, $transition) {
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: $bottom;
+        border-bottom: $height solid $color;
+        transform: scale(0);
+        transition: $transition;
+    }
+
+    &:hover:after {
+        transform: scale(1);
+    }
+}
+
+@mixin link-decoration-inverse ($color, $height, $bottom, $transition) {
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: $bottom;
+        border-bottom: $height solid $color;
+        transform: scale(1);
+        transition: $transition;
+    }
+
+    &:hover:after {
+        transform: scale(0);
+    }
+}

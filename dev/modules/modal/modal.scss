@@ -1,0 +1,72 @@
+body.modal__open {
+    overflow: hidden;
+}
+
+.modal {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s;
+    z-index: -10000;
+
+    &_open {
+        opacity: 1;
+        visibility: visible;
+        z-index: 10000;
+    }
+
+    &__background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $black;
+        opacity: 0.3;
+        z-index: 1000;
+    }
+
+    &__layout {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1010;
+        overflow-x: hidden;
+        overflow-y: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__close {
+        height: 30px;
+        width: 30px;
+        border: 2px solid $white;
+        border-radius: 100%;
+        background-color: $black;
+        display: inline-block;
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        transition: 0.2s;
+        cursor: pointer;
+
+        &:after {
+            height: 18px;
+            width: 18px;
+            content: '';
+            background-image: url('./cross.svg');
+            background-size: contain;
+            display: inline-block;
+            position: relative;
+            z-index: 10000;
+            top: 6px;
+            left: 6px;
+        }
+
+        &:hover {
+            background-color: $green;
+        }
+    }
+}

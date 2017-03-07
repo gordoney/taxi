@@ -1,0 +1,146 @@
+.feature-block {
+    line-height: 1.2;
+    color: $gray-dark;
+
+    &__title {
+        font-size: 31px;
+        text-transform: uppercase;
+        border-bottom: 1px solid $gray-dark;
+        transition: 0.2s;
+        display: inline-block;
+        margin-bottom: 15px;
+
+        &_price {
+            border-bottom: 1px solid transparent;
+        }
+
+        &_active {
+            border-bottom: 1px solid transparent;
+        }
+    }
+
+    &__text {
+        padding-bottom: 30px;
+        font-size: 28px;
+    }
+
+    &__element {
+        position: relative;
+        margin-left: 20px;
+
+        + .feature-block__element {
+            margin-top: 10px;
+        }
+
+        &:before {
+            content: '';
+            height: 6px;
+            width: 6px;
+            display: inline-block;
+            background-color: $gray-dark;
+            border-radius: 100%;
+            margin-right: 15px;
+            position: absolute;
+            left: -20px;
+            top: 12px;
+        }
+    }
+
+    p + p {
+        margin-top: 15px;
+    }
+
+    p + .feature-block__list {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: $large-device-width-point) {
+    .feature-block {
+        &__title {
+            font-size: 24px;
+        }
+
+        &__text {
+            font-size: 22px;
+        }
+
+        &__element {
+            &:before {
+                height: 6px;
+                width: 6px;
+                top: 8px;
+            }
+        }
+    }
+}
+
+@media (max-width: $small-device-width-point) {
+    .feature-block {
+        &__title {
+            font-size: 19px;
+        }
+
+        &__text {
+            font-size: 17px;
+        }
+
+        &__element {
+            &:before {
+                height: 5px;
+                width: 5px;
+                top: 7px;
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile-device-width-point) {
+    .feature-block {
+        line-height: 1.4;
+
+        &__text {
+            display: none;
+            font-size: 14px;
+
+            &_price {
+                display: block;
+            }
+        }
+
+        &__title {
+            border-bottom: 1px dotted $gray-dark;
+            font-size: 18px;
+        }
+
+        &__element {
+            &:before {
+                height: 4px;
+                width: 4px;
+                top: 8px;
+            }
+        }
+    }
+}
+
+@media (max-width: $small-mobile-device-width-point) {
+    .feature-block {
+
+        &__title {
+            font-size: 17px;
+        }
+
+        &__text {
+            font-size: 14px;
+            padding-bottom: 20px;
+        }
+
+        &__element {
+            margin-left: 15px;
+
+            &:before {
+                left: -15px;
+            }
+        }
+    }
+}

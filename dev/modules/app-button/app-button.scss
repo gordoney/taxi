@@ -1,0 +1,83 @@
+.app-button {
+    background-color: $orange;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 5px 5px 8px $black-light;
+    display: inline-block;
+    font-size: 21px;
+    transition: 0.2s;
+    text-decoration: none;
+    color: $white;
+    box-sizing: border-box;
+
+    &:hover {
+        background-color: $green;
+    }
+
+    &__inner {
+        border: 2px solid $white;
+        padding: 5px 8px;
+        border-radius: 3px;
+    }
+
+    &__logo {
+        display: inline-block;
+        vertical-align: middle;
+        width: 30%;
+        height: 40px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        box-sizing: border-box;
+
+        &_android {
+            background-image: url('./android.svg');
+        }
+
+        &_apple {
+            background-image: url('./apple.svg');
+        }
+
+        &_sms {
+            text-align: center;
+            padding-top: 10px;
+        }
+    }
+
+    &__text {
+        display: inline-block;
+        vertical-align: middle;
+        width: 65%;
+        text-align: center;
+    }
+}
+
+@media (max-width: $large-device-width-point) {
+    .app-button {
+        font-size: 16px;
+
+        &__logo {
+            height: 32px;
+        }
+    }
+}
+
+@media (max-width: $small-device-width-point) {
+    .app-button {
+        font-size: 14px;
+        padding: 7px;
+
+        &__logo {
+            height: 26px;
+
+            &_sms {
+                font-size: 18px;
+                padding-top: 4px;
+            }
+        }
+
+        &__inner {
+            padding: 2px 6px;
+        }
+    }
+}

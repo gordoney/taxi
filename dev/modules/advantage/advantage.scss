@@ -1,0 +1,88 @@
+.advantage {
+    background-color: $gray-dark;
+    padding: 80px 0 130px 0;
+
+    &__container {
+        @include container;
+    }
+
+    &__row {
+        @include row;
+    }
+
+    &__title {
+        box-sizing: border-box;
+        font-size: 28px;
+        text-transform: uppercase;
+        color: $gray;
+        text-align: center;
+        padding-bottom: 30px;
+        text-align: center;
+    }
+
+    &__block {
+        @include col(0, 12, 6, 6, 6);
+    }
+
+    &__text {
+        background-color: $gray;
+        padding: 35px 35px 20px 35px;
+        box-sizing: border-box;
+        font-size: 22px;
+        line-height: 1.1;
+        border-radius: 4px;
+
+        &_center {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        p {
+            padding-bottom: 15px;
+        }
+    }
+}
+
+@media (max-width: $large-device-width-point) {
+    .advantage {
+        &__title {
+            font-size: 21px;
+        }
+
+        &__text {
+            font-size: 16px;
+        }
+    }
+}
+
+@media (max-width: $small-device-width-point) {
+    .advantage {
+        padding: 50px 0 70px 0;
+        &__title {
+            font-size: 17px;
+        }
+
+        &__text {
+            font-size: 15px;
+            padding: 20px 10px;
+        }
+    }
+}
+
+@media (max-width: $tablet-device-width-point) {
+    .advantage {
+        padding: 35px 0 0 0;
+
+        &__title {
+            padding-bottom: 15px;
+        }
+
+        &__text {
+            margin: 0 40px 35px 40px;
+            padding: 25px 20px 15px 20px;
+            font-size: 14px;
+        }
+    }
+}

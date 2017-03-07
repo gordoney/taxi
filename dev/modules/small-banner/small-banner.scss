@@ -1,0 +1,35 @@
+.small-banner {
+    background-color: $gray;
+    padding: 20px 50px;
+
+    &__info-text {
+        color: white;
+        font-size: 19px;
+        padding: 10px 30px;
+        background-color: $orange;
+        text-align: center;
+        line-height: 1.4;
+        font-weight: 300;
+        text-transform: uppercase;
+        border-radius: 2px;
+
+        &:first-letter {
+            font-size: 27px;
+        }
+    }
+}
+
+@media (max-width: $small-mobile-device-width-point) {
+    .small-banner {
+        padding: 20px 40px;
+
+        &__info-text {
+            font-size: 15px;
+            padding: 10px 20px;
+
+            &:first-letter {
+                font-size: 18px;
+            }
+        }
+    }
+}

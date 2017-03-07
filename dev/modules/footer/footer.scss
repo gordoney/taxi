@@ -1,0 +1,49 @@
+.footer {
+    background-color: $black;
+    padding: 25px 0;
+    color: $gray;
+
+    &__container {
+        @include container;
+    }
+
+    &__row {
+        @include row;
+        align-items: center;
+    }
+
+    &__info {
+        @include col(0, 12, 7, 7, 6);
+        line-height: 1.2;
+        font-size: 24px;
+    }
+
+    &__menu {
+        @include col(0, 12, 4, 4, 6);
+    }
+
+    &__app-buttons {
+        @include col(0, 0, 13, 13, 12);
+    }
+}
+
+@media (max-width: $large-device-width-point) {
+    .footer {
+        &__info {
+            font-size: 18px;
+        }
+    }
+}
+
+@media (max-width: $small-device-width-point) {
+    .footer {
+        &__info {
+            font-size: 15px;
+            padding-left: 55px;
+        }
+
+        /*&__menu {
+            padding-left: 230px;
+        }*/
+    }
+}

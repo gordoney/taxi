@@ -1,0 +1,223 @@
+.slider {
+    background-color: $gray;
+    font-size: 26px;
+    padding: 60px 0;
+
+    &__notice {
+        display: none;
+        background-color: $orange;
+        font-size: 20px;
+        text-align: center;
+        padding: 10px 30px;
+        box-shadow: 5px 5px 8px $black-light;
+        line-height: 1.4;
+        font-weight: 300;
+        text-transform: uppercase;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        color: $white;
+        margin-top: 35px;
+
+        &:first-letter {
+            font-size: 27px;
+        }
+    }
+
+    &__container {
+        @include container;
+    }
+
+    &__row {
+        @include row;
+        align-items: center;
+    }
+
+    &__column_dot {
+        @include col(0, 12, 9, 9, 8);
+    }
+
+    &__column_slider {
+        @include col(0, 12, 6, 6, 8);
+    }
+
+    &__dot-wrapper {
+        padding-left: 10%;
+        position: relative;
+
+        &:before {
+            content: '';
+            width: 30px;
+            height: 30px;
+            background-image: url('./dot.svg');
+            display: inline-block;
+            vertical-align: middle;
+            opacity: 0;
+            visibility: hidden;
+            margin-right: 10px;
+            transition: 0.4s;
+        }
+
+        &_active {
+            &:before {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        & + .slider__dot-wrapper {
+            padding-top: 60px;
+        }
+    }
+
+    &__dot {
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+        line-height: 1.2;
+    }
+
+    &__phone {
+        height: 700px;
+        background-image: url('./phone-slider.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        position: relative;
+        z-index: 5;
+    }
+
+    &__main {
+        height: 495px;
+        width: 320px;
+        top: 94px;
+        left: 92px;
+        z-index: 1;
+        position: absolute;
+    }
+
+    &__slide {
+        img {
+            width: 100%;
+        }
+    }
+
+    &__phone-wrapper {
+        &:after {
+            top: 5%;
+            bottom: 5%;
+            left: 18%;
+            right: 18%;
+            content: '';
+            position: absolute;
+            display: inline-block;
+            box-shadow: 1px 1px 190px $black;
+            border-radius: 50px;
+        }
+    }
+
+    &__app-buttons {
+        @include push(0, 0, 5, 5, 6);
+        @include col(12, 12, 14, 14, 12);
+        padding-top: 60px;
+        text-align: center;
+    }
+}
+
+@media (max-width: $large-device-width-point) {
+    .slider {
+        font-size: 21px;
+
+        &__dot-wrapper {
+            padding-left: 0;
+        }
+
+        &__phone {
+            height: 535px;
+        }
+
+        &__phone-wrapper {
+            &:after {
+                left: 8%;
+                right: 8%;
+                top: 11%;
+                bottom: 11%;
+            }
+        }
+
+        &__main {
+            height: 370px;
+            width: 240px;
+            top: 73px;
+            left: 26px;
+            overflow: hidden;
+        }
+    }
+}
+
+@media (max-width: $small-device-width-point) {
+    .slider {
+        font-size: 17px;
+        padding: 0 0 20px 0;
+
+        &__phone {
+            &:after {
+                left: 1%;
+                right: 1%;
+            }
+        }
+
+        &__main {
+            height: 303px;
+            width: 200px;
+            top: 108px;
+            left: 23px;
+        }
+
+        &__app-buttons {
+            padding-top: 0px;
+        }
+    }
+}
+
+@media (max-width: $tablet-device-width-point) {
+    .slider {
+        padding: 50px 0;
+
+        &__column_dot:last-child {
+            display: none;
+        }
+
+        &__phone {
+            height: 350px;
+        }
+
+        &__phone-wrapper {
+            &:after {
+                left: 27%;
+                right: 27%;
+                top: 9%;
+                bottom: 9%;
+                border-radius: 30px;
+            }
+        }
+
+        &__main {
+            top: 47px;
+            left: 102px;
+            height: 245px;
+            width: 158px;
+        }
+
+        &__dot-wrapper {
+            padding-left: 20px;
+            
+            & + .slider__dot-wrapper {
+                padding-top: 35px;
+            }
+        }
+
+        &__notice {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,173 @@
+.header {
+    background-color: $green;
+    padding: 20px 0;
+    color: $white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 110;
+
+    &__fix {
+        width: 100%;
+    }
+
+    &__container {
+        @include container;
+    }
+
+    &__row {
+        @include row;
+        align-items: center;
+    }
+
+    &__logo {
+        background-image: url('./logo.svg');
+        width: 100px;
+        height: 100px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin-right: 45px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &__site {
+        @include col(5, 6, 9, 8, 11);
+    }
+
+    &__name {
+        font-size: 80px;
+        font-weight: bold;
+        display: inline-block;
+        vertical-align: middle;
+        text-decoration: none;
+        color: $white;
+
+        &_tablet {
+            display: none;
+        }
+    }
+
+    &__slogan {
+        font-size: 44px;
+        @include col(14, 12, 11, 14, 10);
+        text-align: right;
+    }
+
+    &__slogan-text {
+        &:first-letter {
+            font-size: 58px;
+        }
+    }
+
+    &__top-menu-block {
+        @include col(5, 6, 4, 2, 3);
+        text-align: right;
+        position: relative;
+    }
+}
+
+@media (max-width: $large-device-width-point) {
+    .header {
+        &__logo {
+            width: 65px;
+            height: 65px;
+        }
+
+        &__name {
+            font-size: 60px;
+        }
+    }
+}
+
+@media (max-width: $small-device-width-point) {
+    .header {
+        &__logo {
+            margin-right: 15px;
+        }
+
+        &__name {
+            font-size: 54px;
+        }
+
+        &__slogan {
+            font-size: 28px;
+        }
+
+        &__slogan-text {
+            &:first-letter {
+                font-size: 38px;
+            }
+        }
+    }
+}
+
+@media (max-width: $tablet-device-width-point) {
+    .header {
+        &__name {
+            display: none;
+            font-size: 44px;
+
+            &_tablet {
+                display: block;
+            }
+        }
+
+        &__slogan {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        &__slogan-text {
+            &:first-letter {
+                font-size: 22px;
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile-device-width-point) {
+    .header {
+        &__name {
+            font-size: 40px;
+        }
+
+        &__slogan {
+            font-size: 14px;
+        }
+
+        &__slogan-text {
+            &:first-letter {
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+@media (max-width: $small-mobile-device-width-point) {
+    .header {
+        &__logo {
+            width: 35px;
+            height: 35px;
+        }
+
+        &__name {
+            font-size: 27px;
+        }
+
+        &__slogan {
+            font-size: 11px;
+        }
+
+        &__slogan-text {
+            &:first-letter {
+                font-size: 12px;
+            }
+        }
+
+        &__top-menu-block {
+            padding-left: 0;
+        }
+    }
+}

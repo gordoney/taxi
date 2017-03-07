@@ -1,0 +1,31 @@
+@import './reset';
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('./../fonts/icomoon.eot?3vnuha');
+  src:  url('./../fonts/icomoon.eot?3vnuha#iefix') format('embedded-opentype'),
+    url('./../fonts/icomoon.ttf?3vnuha') format('truetype'),
+    url('./../fonts/icomoon.woff?3vnuha') format('woff'),
+    url('./../fonts/icomoon.svg?3vnuha#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'arial';
+  src:  url('./../fonts/arial.eot?3vnuha');
+  src:  url('./../fonts/arial.eot?3vnuha#iefix') format('embedded-opentype'),
+    url('./../fonts/arial.ttf?3vnuha') format('truetype'),
+    url('./../fonts/arial.woff?3vnuha') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+::selection {
+    background-color: $green;
+    color: $white;
+}
+
+body {
+    font-family: 'arial';
+}
