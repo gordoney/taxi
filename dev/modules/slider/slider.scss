@@ -1,3 +1,5 @@
+@import '~slick-carousel/slick/slick.css';
+
 .slider {
     background-color: $gray;
     font-size: 26px;
@@ -210,7 +212,7 @@
 
         &__dot-wrapper {
             padding-left: 20px;
-            
+
             & + .slider__dot-wrapper {
                 padding-top: 35px;
             }

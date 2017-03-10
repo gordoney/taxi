@@ -23,7 +23,23 @@
     }
 
     &__app-buttons {
-        @include col(0, 0, 13, 13, 12);
+        @include col(0, 24, 13, 13, 12);
+    }
+
+    &__medialine {
+        text-align: right;
+        padding-top: 5px;
+        font-size: 13px;
+    }
+
+    &__medialine-link {
+        color: $white;
+        text-decoration: none;
+        transition: 0.2s;
+
+        &:hover {
+            color: $green;
+        }
     }
 }
 
@@ -42,8 +58,15 @@
             padding-left: 55px;
         }
 
-        /*&__menu {
-            padding-left: 230px;
-        }*/
+        &__medialine {
+            text-align: left;
+            padding-left: 40px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        &__medialine-link {
+            color: $green;
+        }
     }
 }

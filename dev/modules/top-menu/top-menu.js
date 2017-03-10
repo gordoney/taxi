@@ -2,8 +2,8 @@
 
 import './top-menu.scss';
 
-import {openBlock, getBlock} from './../feature-block/feature-block';
-import {promiseHeaderHeight} from './../header/header';
+import {openBlock, getBlock} from './../feature-block/feature-block.js';
+import {promiseHeaderHeight} from './../header/header.js';
 
 const $button = '.top-menu__menu-button';
 const activeButton = 'top-menu__menu-button_active';
@@ -15,10 +15,31 @@ let block = '';
 let menuActive = false;
 let headerHeight = 0;
 
+function getAttr(key, url) {
+    let s = url;
+    s = s.match(new RegExp(key + '=([^&=]+)'));
+    return s ? s[1] : false;
+}
+
+function $_GET(key) {
+    let s = window.location.search;
+    s = s.match(new RegExp(key + '=([^&=]+)'));
+    return s ? s[1] : false;
+}
+
 $(window).on('load', function () {
     promiseHeaderHeight.then(
         result => {
             headerHeight = result;
+
+            if ($_GET('id')) {
+                anchor = $_GET('id');
+
+                block = getBlock("#"+anchor);
+
+                openBlock("#"+anchor);
+                $('html, body').animate({scrollTop: $(block).offset().top - headerHeight}, 1000);
+            }
         }
     );
 
@@ -28,13 +49,15 @@ $(window).on('load', function () {
         $($button).toggleClass(activeButton);
     });
 
-    $($buttonAnchor).click(function (e) {
-        e.preventDefault();
-        anchor = $(this).attr("href");
+    $($buttonAnchor).click(function () {
+        anchor = getAttr('id', $(this).attr("href"));
 
-        openBlock(anchor);
-        block = getBlock(anchor);
+        openBlock("#"+anchor);
+        block = getBlock("#"+anchor);
 
-        $('html, body').animate({scrollTop: $(block).offset().top - headerHeight}, 1000);
+        if (block.length > 0) {
+            $('html, body').animate({scrollTop: $(block).offset().top - headerHeight}, 1000);
+            return false;
+        }
     });
 });

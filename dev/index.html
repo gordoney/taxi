@@ -9,8 +9,15 @@
 
     <script src="/js/common.js"></script>
     <script src="/js/mainpage.js"></script>
+    <script src="/js/topMenu.js"></script>
+    <script src="/js/appButtons.js"></script>
+    <script src="/js/slider.js"></script>
+    <script src="/js/bottomMenu.js"></script>
+    <script src="/js/advantage.js"></script>
+    <script src="/js/paymentLogos.js"></script>
 </head>
 <body>
+    <div class="wrapper">
     <div class="header__fix"></div>
 
     <header class="header">
@@ -56,6 +63,7 @@
         </div>
     </header>
 
+    <div class="content">
     <section class="big-banner">
         <div class="big-banner__container">
             <div class="big-banner__row">
@@ -315,6 +323,7 @@
             </div>
         </div>
     </section>
+    </div>
 
     <footer class="footer">
         <div class="footer__container">
@@ -339,42 +348,48 @@
                     </nav>
                 </div>
 
-                <div class="app-buttons app-buttons_black footer__app-buttons">
-                    <a href="/" class="app-button app-buttons__app-button">
-                        <div class="app-button__inner">
-                            <div class="app-button__logo app-button__logo_android">
+                <div class="footer__app-buttons">
+                    <div class="app-buttons app-buttons_black">
+                        <a href="/" class="app-button app-buttons__app-button">
+                            <div class="app-button__inner">
+                                <div class="app-button__logo app-button__logo_android">
 
+                                </div>
+
+                                <div class="app-button__text">
+                                    загрузить Google Play
+                                </div>
                             </div>
+                        </a>
 
-                            <div class="app-button__text">
-                                загрузить Google Play
+                        <a href="/" class="app-button app-buttons__app-button">
+                            <div class="app-button__inner">
+                                <div class="app-button__logo app-button__logo_apple">
+
+                                </div>
+
+                                <div class="app-button__text">
+                                    загрузить App Store
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
 
-                    <a href="/" class="app-button app-buttons__app-button">
-                        <div class="app-button__inner">
-                            <div class="app-button__logo app-button__logo_apple">
+                        <a href="/" class="app-button app-buttons__app-button modal__app-button" data-modal-button="sms">
+                            <div class="app-button__inner">
+                                <div class="app-button__logo app-button__logo_sms">
+                                    SMS
+                                </div>
 
+                                <div class="app-button__text">
+                                    получить ссылку
+                                </div>
                             </div>
+                        </a>
+                    </div>
 
-                            <div class="app-button__text">
-                                загрузить App Store
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="/" class="app-button app-buttons__app-button modal__app-button" data-modal-button="sms">
-                        <div class="app-button__inner">
-                            <div class="app-button__logo app-button__logo_sms">
-                                SMS
-                            </div>
-
-                            <div class="app-button__text">
-                                получить ссылку
-                            </div>
-                        </div>
-                    </a>
+                    <div class="footer__medialine">
+                        Разработка сайта: <a class="footer__medialine-link" href="http://www.medialine.by/">Медиа Лайн</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -405,7 +420,7 @@
     <div class="modal" data-modal="sms">
         <div class="modal__background"></div>
 
-        <div class="modal__layout">
+
             <div class="modal__block">
                 <div class="get-app">
                     <div class="modal__close"></div>
@@ -429,9 +444,17 @@
                             <button class="get-app__button">Получить</button>
                         </div>
                     </div>
+
+                    <div class="get-app__error">
+
+                    </div>
+
+                    <div class="get-app__success">
+
+                    </div>
                 </div>
             </div>
-        </div>
+    </div>
     </div>
 </body>
 </html>

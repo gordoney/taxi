@@ -3,6 +3,7 @@
     padding: 20px 0;
     font-size: 28px;
     color: $gray-dark;
+    width: 100%;
 
     &__container {
         @include container-narrow;
@@ -31,6 +32,14 @@
 
         p {
             padding-bottom: 7px;
+        }
+    }
+}
+
+@media (max-width: $mobile-device-width-point) {
+    .inner-page {
+        &__form {
+            width: 100%;
         }
     }
 }

@@ -34,6 +34,11 @@
         background-color: $white;
         display: block;
         transition: 0.2s;
+        width: 43px;
+
+        &:nth-child(1) {
+            transform-origin: right top;
+        }
 
         &:nth-child(3) {
             transform-origin: right bottom;
@@ -47,9 +52,7 @@
     &__menu-button {
         width: 65px;
         background-color: $green;
-        border: none;
         padding: 8px;
-        box-sizing: border-box;
         outline: none;
         display: inline-block;
         transition: 0.2s;
@@ -66,7 +69,7 @@
             }
 
             .top-menu__line:nth-child(1){
-            	transform: translate(0, 15px) rotate(-45deg) scalex(1.6);
+            	transform: translate(0, -8px) rotate(-45deg) scalex(1.6);
             }
             .top-menu__line:nth-child(2){
             	opacity: 0;

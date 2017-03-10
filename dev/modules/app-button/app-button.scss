@@ -50,6 +50,10 @@
         width: 65%;
         text-align: center;
     }
+    
+    &__img {
+        max-width: 100%;
+    }
 }
 
 @media (max-width: $large-device-width-point) {

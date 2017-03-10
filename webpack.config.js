@@ -8,7 +8,16 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
     entry: {
         mainpage: __dirname + '/dev/mainpage',
+        mainpagePhone: __dirname + '/dev/mainpage-phone',
+        inner: __dirname + '/dev/inner',
         topMenu: __dirname + '/dev/modules/top-menu/top-menu',
+        slider: __dirname + '/dev/modules/slider/slider',
+        advantage: __dirname + '/dev/modules/advantage/advantage',
+        bottomMenu: __dirname + '/dev/modules/bottom-menu/bottom-menu',
+        appButtons: __dirname + '/dev/modules/app-buttons/app-buttons',
+        paymentLogos: __dirname + '/dev/modules/payment-logos/payment-logos',
+        features: __dirname + '/dev/modules/features/features',
+        horizontalMenu: __dirname + '/dev/modules/horizontal-menu/horizontal-menu',
     }, 
     output: {
         path: __dirname + '/public',
@@ -61,12 +70,16 @@ module.exports = {
                 })
             },
             {
-                test: /\.(svg|ttf|eot|woff|woff2)$/,
-                loader: 'file-loader?name=fonts/[name].[ext]?[hash]&publicPath=./../'
+                test: /\.(ttf|eot|woff|woff2)$/,
+                loader: 'file-loader?name=fonts/[name].[ext]?[hash]'
+            },
+            {
+                test: /\.svg$/,
+                loader: 'file-loader?name=svg/[name].[ext]?[hash]'
             },
             {
                 test: /\.(png|jpg|gif)$/,
-                loader: 'file-loader?name=images/[name].[ext]?[hash]&publicPath=./../'
+                loader: 'file-loader?name=images/[name].[ext]?[hash]'
             },
             {
                 test: /\.html$/,
@@ -79,7 +92,7 @@ module.exports = {
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'common',
-            minChunks: 5,
+            minChunks: 2,
         }),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
@@ -90,7 +103,7 @@ module.exports = {
             },
             sourceMap: true
         }),
-        new ExtractTextPlugin({filename: "css/[name].css", allChunks: true, disable: NODE_ENV == 'development'}),
+        new ExtractTextPlugin({filename: "css/[name].css", allChunks: false, disable: NODE_ENV == 'development'}),
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery",

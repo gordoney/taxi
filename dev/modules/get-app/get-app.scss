@@ -9,16 +9,16 @@
 
     &__info {
         font-size: 31px;
-        min-width: 48%;
-        margin-bottom: 20px;
+        width: 47%;
+        padding-left: 20px;
     }
 
     &__field-block {
-        min-width: 48%;
+        min-width: 52%;
     }
 
     &__captha {
-        min-width: 48%;
+        min-width: 52%;
     }
 
     &__top {
@@ -34,7 +34,8 @@
     }
 
     &__button-block {
-        min-width: 48%;
+        min-width: 47%;
+        padding-left: 20px;
     }
 
     &__button {
@@ -71,6 +72,16 @@
         &:focus {
             border: 3px solid $orange;
         }
+    }
+
+    &__error {
+        color: $red;
+        padding-top: 5px;
+    }
+
+    &__success {
+        color: $white;
+        padding-top: 5px;
     }
 }
 

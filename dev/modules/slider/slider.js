@@ -1,11 +1,8 @@
 "use strict";
 
 import './slider.scss';
-import './../app-buttons/app-buttons';
-
 
 import slick from 'slick-carousel';
-import 'slick-carousel/slick/slick.css';
 
 const $slider = '.slider__slick';
 const $dot = '.slider__dot';

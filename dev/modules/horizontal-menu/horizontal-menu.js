@@ -19,7 +19,13 @@ function setMenuFix ($headerFix, menuHeight) {
 }
 
 function $_GET(key) {
-    var s = window.location.search;
+    let s = window.location.search;
+    s = s.match(new RegExp(key + '=([^&=]+)'));
+    return s ? s[1] : false;
+}
+
+function getAttr(key, url) {
+    let s = url;
     s = s.match(new RegExp(key + '=([^&=]+)'));
     return s ? s[1] : false;
 }
@@ -53,11 +59,13 @@ $(window).on('load', function () {
     });
 
     $($buttonAnchor).click(function (e) {
-        e.preventDefault();
-        anchor = $(this).attr("href");
+        anchor = getAttr('id', $(this).attr("href"));
 
-        block = getBlock(anchor);
+        block = getBlock("#"+anchor);
 
-        scrollPage(block, headerHeight);
+        if (block.length > 0) {
+            scrollPage(block, headerHeight);
+            return false;
+        }
     });
 });
