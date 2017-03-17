@@ -2,7 +2,7 @@
     background-image: url('./map1920.jpg');
     background-position: center center;
     background-repeat: no-repeat;
-    padding: 65px 0 155px 0;
+    padding: 67px 0 169px 0;
     color: $white;
 
     &__container {
@@ -16,40 +16,45 @@
     &__phone {
         height: 750px;
         min-height: 750px;
-        @include col(14, 6, 5, 5, 6);
+        @include col(14, 8, 7, 6, 6);
         background-image: url('./phone.png');
         background-size: contain;
         background-repeat: no-repeat;
-        @include push(5, 9, 2, 2, 2);
+        @include push(5, 8, 2, 2, 2);
     }
 
     &__info {
-        @include col(0, 14, 13, 13, 13);
-        @include push(0, 5, 4, 4, 3);
-        padding-top: 50px;
+        @include col(0, 12, 12, 12, 12);
+        @include push(0, 6, 3, 4, 4);
+        padding-top: 109px;
     }
 
     &__info-text {
         background-color: $orange;
         font-size: 48px;
         text-align: center;
-        padding: 25px 70px;
+        padding: 23px 70px;
         box-shadow: 5px 5px 8px $black-light;
         line-height: 1.4;
         font-weight: 300;
         text-transform: uppercase;
         border-radius: 4px;
         margin-bottom: 20px;
+        margin-left: -30px;
 
         &:first-letter {
             font-size: 62px;
         }
     }
+
+    .app-buttons {
+        margin-left: -30px;
+    }
 }
 
 @media (max-width: $large-device-width-point) {
     .big-banner {
-        padding: 25px 0;
+        padding: 30px 0;
 
         &__info-text {
             background-color: $orange;
@@ -60,15 +65,32 @@
             }
         }
 
-        &__phone {height: 460px;}
+        &__phone {
+            height: 520px;
+            background-position: 15px top;
+        }
+
+        &__info {
+            padding-top: 74px;
+        }
     }
 }
 
 @media (max-width: $small-device-width-point) {
     .big-banner {
+        padding: 30px 0 90px 0;
+
+        &__phone {
+            height: 460px;
+        }
+
+        &__info {
+            padding-top: 68px;
+        }
+
         &__info-text {
             font-size: 28px;
-            padding: 25px 60px;
+            padding: 16px 60px;
 
             &:first-letter {
                 font-size: 38px;
@@ -79,19 +101,22 @@
 
 @media (max-width: $tablet-device-width-point) {
     .big-banner {
+        padding: 25px 0 49px 0;
+
         &__row {
             flex-direction: column;
         }
 
         &__phone {
-            height: 350px;
-            min-height: 350px;
+            height: 390px;
+            background-position: center center;
         }
 
         &__info-text {
             font-size: 20px;
-            padding: 15px 60px;
+            padding: 13px 40px;
             line-height: 1.6;
+            margin-left: 0;
 
             &:first-letter {
                 font-size: 28px;
@@ -99,7 +124,7 @@
         }
 
         &__info {
-            padding-top: 0;
+            padding-top: 29px;
         }
     }
 }
@@ -108,14 +133,24 @@
     .big-banner {
         background-image: url('./background-mobile.jpg');
         background-size: cover;
+        padding: 45px 0 49px 0;
 
         &__info {
             display: none;
         }
 
         &__phone {
-            height: 470px;
-            min-height: 470px;
+            height: 540px;
+        }
+    }
+}
+
+@media (max-width: $small-mobile-device-width-point) {
+    .big-banner {
+        padding: 30px 0 14px 0;
+
+        &__phone {
+            height: 347px;
         }
     }
 }

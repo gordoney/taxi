@@ -9,6 +9,7 @@ const buttonDisable = 'feature-block__title_price';
 const buttonActive = 'feature-block__title_active';
 const $toggleBlock = '.feature-block__text';
 const $block = '.feature-block';
+const $disablePage = '.inner-page';
 
 let currentBlock = '';
 
@@ -26,7 +27,7 @@ function getBlock (element) {
 }
 
 $(document).ready(function () {
-    if (isMobile.phone) {
+    if (isMobile.phone && $($disablePage).length == 0) {
         $($button).click(function () {
             if (!$(this).hasClass(buttonDisable)) {
                 $(this).toggleClass(buttonActive);

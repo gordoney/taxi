@@ -1,6 +1,6 @@
 .header {
     background-color: $green;
-    padding: 20px 0;
+    padding: 23px 0 20px 0;
     color: $white;
     position: fixed;
     width: 100%;
@@ -23,17 +23,18 @@
 
     &__logo {
         background-image: url('./logo.svg');
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
         background-repeat: no-repeat;
         background-position: center center;
-        margin-right: 45px;
+        margin-right: 47px;
+        margin-left: 17px;
         display: inline-block;
         vertical-align: middle;
     }
 
     &__site {
-        @include col(5, 6, 9, 8, 11);
+        @include col(5, 8, 10, 8, 8);
     }
 
     &__name {
@@ -51,7 +52,7 @@
 
     &__slogan {
         font-size: 44px;
-        @include col(14, 12, 11, 14, 10);
+        @include col(14, 8, 10, 14, 12);
         text-align: right;
     }
 
@@ -62,8 +63,9 @@
     }
 
     &__top-menu-block {
-        @include col(5, 6, 4, 2, 3);
-        text-align: right;
+        @include col(5, 8, 4, 2, 2);
+        @include push(0, 0, 0, 0, 2);
+        text-align: left;
         position: relative;
     }
 }
@@ -71,12 +73,23 @@
 @media (max-width: $large-device-width-point) {
     .header {
         &__logo {
-            width: 65px;
-            height: 65px;
+            width: 70px;
+            height: 70px;
+            margin-left: 14px;
+            margin-right: 28px;
         }
 
         &__name {
             font-size: 60px;
+        }
+
+        &__slogan-text {
+            font-size: 33px;
+            padding-right: 88px;
+
+            &:first-letter {
+                font-size: 44px;
+            }
         }
     }
 }
@@ -84,7 +97,10 @@
 @media (max-width: $small-device-width-point) {
     .header {
         &__logo {
-            margin-right: 15px;
+            width: 60px;
+            height: 60px;
+            margin-left: 0;
+            margin-right: 35px;
         }
 
         &__name {
@@ -92,13 +108,20 @@
         }
 
         &__slogan {
-            font-size: 28px;
+            padding-right: 0;
         }
 
         &__slogan-text {
+            padding-right: 0;
+            font-size: 29px;
+
             &:first-letter {
                 font-size: 38px;
             }
+        }
+
+        &__top-menu-block {
+            text-align: right;
         }
     }
 }
@@ -116,31 +139,55 @@
 
         &__slogan {
             text-align: center;
-            font-size: 18px;
+            padding-right: 15px;
+            padding-left: 5px;
         }
 
         &__slogan-text {
+            font-size: 16px;
+
             &:first-letter {
                 font-size: 22px;
             }
+        }
+
+        &__logo {
+            width: 58px;
+            height: 58px;
+            margin-left: 49px;
+        }
+
+        &__top-menu-block {
+            padding-right: 53px;
         }
     }
 }
 
 @media (max-width: $mobile-device-width-point) {
     .header {
-        &__name {
-            font-size: 40px;
+        padding: 11px 0 12px 0;
+
+        &__logo {
+            width: 52px;
+            height: 52px;
+            margin-left: 15px;
         }
 
-        &__slogan {
-            font-size: 14px;
+        &__name {
+            font-size: 40px;
+            padding-bottom: 2px;
         }
 
         &__slogan-text {
+            font-size: 14px;
+
             &:first-letter {
                 font-size: 15px;
             }
+        }
+
+        &__top-menu-block {
+            padding-right: 20px;
         }
     }
 }
@@ -150,17 +197,16 @@
         &__logo {
             width: 35px;
             height: 35px;
+            margin-left: 9px;
         }
 
         &__name {
             font-size: 27px;
         }
 
-        &__slogan {
-            font-size: 11px;
-        }
-
         &__slogan-text {
+            font-size: 11px;
+
             &:first-letter {
                 font-size: 12px;
             }
@@ -168,6 +214,7 @@
 
         &__top-menu-block {
             padding-left: 0;
+            padding-right: 16px
         }
     }
 }

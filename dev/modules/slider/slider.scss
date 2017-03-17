@@ -3,22 +3,23 @@
 .slider {
     background-color: $gray;
     font-size: 26px;
-    padding: 60px 0;
+    padding: 40px 0 20px 0;
 
     &__notice {
         display: none;
         background-color: $orange;
         font-size: 20px;
         text-align: center;
-        padding: 10px 30px;
+        padding: 10px 40px;
         box-shadow: 5px 5px 8px $black-light;
         line-height: 1.4;
         font-weight: 300;
         text-transform: uppercase;
         border-radius: 4px;
-        margin-bottom: 20px;
         color: $white;
-        margin-top: 35px;
+        margin-top: 45px;
+        margin-left: 49px;
+        margin-right: 23px;
 
         &:first-letter {
             font-size: 27px;
@@ -35,27 +36,34 @@
     }
 
     &__column_dot {
-        @include col(0, 12, 9, 9, 8);
+        @include col(0, 14, 8, 8, 8);
+
+        &:nth-child(3) {
+            .slider__dot-wrapper {
+                padding-left: 0;
+                margin-left: -25px;
+            }
+        }
     }
 
     &__column_slider {
-        @include col(0, 12, 6, 6, 8);
+        @include col(0, 8, 8, 8, 8);
     }
 
     &__dot-wrapper {
-        padding-left: 10%;
+        padding-left: 74px;
         position: relative;
 
         &:before {
             content: '';
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
             background-image: url('./dot.svg');
             display: inline-block;
             vertical-align: middle;
             opacity: 0;
             visibility: hidden;
-            margin-right: 10px;
+            margin-right: 26px;
             transition: 0.4s;
         }
 
@@ -67,7 +75,7 @@
         }
 
         & + .slider__dot-wrapper {
-            padding-top: 60px;
+            padding-top: 62px;
         }
     }
 
@@ -118,10 +126,12 @@
     }
 
     &__app-buttons {
-        @include push(0, 0, 5, 5, 6);
-        @include col(12, 12, 14, 14, 12);
-        padding-top: 60px;
+        @include push(0, 0, 6, 6, 6);
+        @include col(12, 12, 12, 12, 12);
+        padding-top: 30px;
         text-align: center;
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
@@ -130,28 +140,49 @@
         font-size: 21px;
 
         &__dot-wrapper {
-            padding-left: 0;
+            padding-left: 34px;
+
+            &:before {
+                width: 30px;
+                height: 30px;
+            }
         }
 
         &__phone {
-            height: 535px;
+            height: 500px;
         }
 
         &__phone-wrapper {
             &:after {
-                left: 8%;
-                right: 8%;
+                left: 20%;
+                right: 20%;
                 top: 11%;
                 bottom: 11%;
             }
         }
 
         &__main {
-            height: 370px;
-            width: 240px;
-            top: 73px;
-            left: 26px;
+            height: 350px;
+            width: 226px;
+            top: 67px;
+            left: 85px;
             overflow: hidden;
+        }
+
+        &__dot-wrapper {
+            & + .slider__dot-wrapper {
+                padding-top: 48px;
+            }
+        }
+
+        &__column_dot {
+            padding-right: 0;
+
+            &:nth-child(3) {
+                .slider__dot-wrapper {
+                    margin-left: -50px;
+                }
+            }
         }
     }
 }
@@ -159,9 +190,22 @@
 @media (max-width: $small-device-width-point) {
     .slider {
         font-size: 17px;
-        padding: 0 0 20px 0;
+        padding: 30px 0 20px 0;
+
+        &__dot-wrapper {
+            & + .slider__dot-wrapper {
+                padding-top: 52px;
+            }
+
+            &:before {
+                width: 25px;
+                height: 25px;
+            }
+        }
 
         &__phone {
+            height: 440px;
+
             &:after {
                 left: 1%;
                 right: 1%;
@@ -169,34 +213,43 @@
         }
 
         &__main {
-            height: 303px;
+            height: 309px;
             width: 200px;
-            top: 108px;
-            left: 23px;
+            top: 58px;
+            left: 60px;
         }
 
         &__app-buttons {
-            padding-top: 0px;
+            padding-top: 20px;
+        }
+
+        &__phone-wrapper {
+            &:after {
+                left: 19%;
+                right: 19%;
+                top: 6%;
+                bottom: 6%;
+            }
         }
     }
 }
 
 @media (max-width: $tablet-device-width-point) {
     .slider {
-        padding: 50px 0;
+        padding: 55px 0 67px 0;
 
         &__column_dot:last-child {
             display: none;
         }
 
         &__phone {
-            height: 350px;
+            height: 390px;
         }
 
         &__phone-wrapper {
             &:after {
-                left: 27%;
-                right: 27%;
+                left: 13%;
+                right: 13%;
                 top: 9%;
                 bottom: 9%;
                 border-radius: 30px;
@@ -204,10 +257,10 @@
         }
 
         &__main {
-            top: 47px;
-            left: 102px;
-            height: 245px;
-            width: 158px;
+            top: 50px;
+            left: 36px;
+            height: 276px;
+            width: 178px;
         }
 
         &__dot-wrapper {
@@ -220,6 +273,20 @@
 
         &__notice {
             display: block;
+        }
+
+        &__dot-wrapper {
+            padding-left: 84px;
+
+            &:before {
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+            }
+
+            & + .slider__dot-wrapper {
+                padding-top: 32px;
+            }
         }
     }
 }

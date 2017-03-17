@@ -1,6 +1,6 @@
 .inner-page {
     background-color: $gray;
-    padding: 20px 0;
+    padding: 60px 0;
     font-size: 28px;
     color: $gray-dark;
     width: 100%;
@@ -29,9 +29,22 @@
 @media (max-width: $small-device-width-point) {
     .inner-page {
         font-size: 17px;
+        padding: 44px 0;
 
         p {
             padding-bottom: 7px;
+        }
+
+        .features {
+            padding: 0 15px;
+        }
+
+        .feature-block__text {
+            display: block;
+        }
+
+        .feature-block__title {
+            border-bottom: 1px solid $gray-dark;
         }
     }
 }

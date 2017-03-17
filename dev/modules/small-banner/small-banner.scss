@@ -1,6 +1,7 @@
 .small-banner {
     background-color: $gray;
-    padding: 20px 50px;
+    padding: 36px 0;
+    text-align: center;
 
     &__info-text {
         color: white;
@@ -12,6 +13,9 @@
         font-weight: 300;
         text-transform: uppercase;
         border-radius: 2px;
+        width: 339px;
+        box-sizing: border-box;
+        display: inline-block;
 
         &:first-letter {
             font-size: 27px;
@@ -21,11 +25,12 @@
 
 @media (max-width: $small-mobile-device-width-point) {
     .small-banner {
-        padding: 20px 40px;
+        padding: 44px 40px 35px 40px;
 
         &__info-text {
-            font-size: 15px;
+            font-size: 14px;
             padding: 10px 20px;
+            width: 226px;
 
             &:first-letter {
                 font-size: 18px;

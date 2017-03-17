@@ -5,26 +5,30 @@
     border-radius: 3px;
     color: $white;
     padding: 25px 40px;
-    width: 700px;
+    width: 674px;
+    box-sizing: border-box;
 
     &__info {
         font-size: 31px;
-        width: 47%;
+        width: 330px;
         padding-left: 20px;
     }
 
     &__field-block {
-        min-width: 52%;
+        width: 304px;
+        min-width: 304px;
     }
 
     &__captha {
-        min-width: 52%;
+        width: 304px;
+        min-width: 304px;
     }
 
     &__top {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding-bottom: 20px;
     }
 
     &__bottom {
@@ -34,7 +38,7 @@
     }
 
     &__button-block {
-        min-width: 47%;
+        width: 330px;
         padding-left: 20px;
     }
 
@@ -87,17 +91,27 @@
 
 @media (max-width: $large-device-width-point) {
     .get-app {
-        width: 580px;
+        width: 660px;
 
         &__info {
             font-size: 22px;
+            line-height: 1.3;
+        }
+
+        &__button-block {
+            padding-left: 38px;
+        }
+
+        &__info {
+            padding-left: 38px;
         }
     }
 }
 
 @media (max-width: $small-device-width-point) {
     .get-app {
-        width: 480px;
+        width: 600px;
+        padding: 17px 31px 10px 31px;
 
         &__info {
             font-size: 18px;
@@ -109,6 +123,10 @@
 
         &__field {
             height: 44px;
+        }
+
+        &__button-block {
+            padding-left: 32px;
         }
     }
 }

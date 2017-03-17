@@ -1,6 +1,6 @@
 .footer {
-    background-color: $black;
-    padding: 25px 0;
+    background-color: $black-opacity;
+    padding: 35px 0 42px 0;
     color: $gray;
 
     &__container {
@@ -13,60 +13,82 @@
     }
 
     &__info {
-        @include col(0, 12, 7, 7, 6);
+        @include col(8, 8, 8, 6, 6);
+        @include push(4, 4, 0, 2, 0);
         line-height: 1.2;
         font-size: 24px;
     }
 
     &__menu {
-        @include col(0, 12, 4, 4, 6);
+        @include col(6, 6, 4, 4, 6);
+        @include push(8, 8, 0, 2, 0);
+        padding-left: 22px;
     }
 
     &__app-buttons {
-        @include col(0, 24, 13, 13, 12);
+        @include col(0, 24, 12, 12, 12);
+        @include push(0, 0, 0, 2, 0);
     }
 
-    &__medialine {
-        text-align: right;
-        padding-top: 5px;
-        font-size: 13px;
-    }
-
-    &__medialine-link {
-        color: $white;
-        text-decoration: none;
-        transition: 0.2s;
-
-        &:hover {
-            color: $green;
-        }
+    .app-buttons {
+        margin-left: -30px
     }
 }
 
 @media (max-width: $large-device-width-point) {
     .footer {
+        padding: 26px 0 27px 0;
+
         &__info {
             font-size: 18px;
+            padding-left: 0;
+            margin-left: -13px;
+        }
+
+        &__menu {
+            padding-left: 0px;
+        }
+
+        &__app-buttons {
+            padding-right: 0;
+            margin-left: 15px;
         }
     }
 }
 
 @media (max-width: $small-device-width-point) {
     .footer {
+        padding: 22px 0 21px 0;
+
         &__info {
             font-size: 15px;
-            padding-left: 55px;
+            padding-left: 66px;
+            margin-left: 0;
         }
 
-        &__medialine {
-            text-align: left;
-            padding-left: 40px;
-            padding-top: 20px;
-            padding-bottom: 20px;
+        &__app-buttons {
+            padding-right: 15px;
+            margin-left: 0px;
         }
 
-        &__medialine-link {
-            color: $green;
+        .app-buttons {
+            margin-left: 0;
+        }
+
+        &__menu {
+            padding-left: 10px;
+        }
+    }
+}
+
+@media (max-width: $tablet-device-width-point) {
+    .footer {
+        &__info {
+            padding-left: 15px;
+        }
+
+        &__menu {
+            padding-left: 35px;
         }
     }
 }

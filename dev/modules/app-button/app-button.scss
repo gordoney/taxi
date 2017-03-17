@@ -1,7 +1,7 @@
 .app-button {
     background-color: $orange;
-    padding: 10px;
-    border-radius: 4px;
+    padding: 13px;
+    border-radius: 6px;
     box-shadow: 5px 5px 8px $black-light;
     display: inline-block;
     font-size: 21px;
@@ -15,8 +15,8 @@
     }
 
     &__inner {
-        border: 2px solid $white;
-        padding: 5px 8px;
+        border: 3px solid $white;
+        padding: 3px 7px 5px 0;
         border-radius: 3px;
     }
 
@@ -24,7 +24,7 @@
         display: inline-block;
         vertical-align: middle;
         width: 30%;
-        height: 40px;
+        height: 39px;
         background-repeat: no-repeat;
         background-position: center center;
         background-size: contain;
@@ -32,25 +32,33 @@
 
         &_android {
             background-image: url('./android.svg');
+            width: 39px;
+            margin-left: 20px;
+            margin-right: 10px;
         }
 
         &_apple {
             background-image: url('./apple.svg');
+            width: 33px;
+            margin-left: 20px;
+            margin-right: 19px;
         }
 
         &_sms {
             text-align: center;
-            padding-top: 10px;
+            padding-top: 5px;
+            font-size: 29px;
+            margin-left: 15px;
         }
     }
 
     &__text {
         display: inline-block;
         vertical-align: middle;
-        width: 65%;
+        width: 59%;
         text-align: center;
     }
-    
+
     &__img {
         max-width: 100%;
     }
@@ -59,9 +67,33 @@
 @media (max-width: $large-device-width-point) {
     .app-button {
         font-size: 16px;
+        padding: 10px;
 
         &__logo {
             height: 32px;
+
+            &_android {
+                width: 30px;
+                margin-left: 10px;
+                margin-right: 5px;
+            }
+
+            &_apple {
+                width: 28px;
+                margin-left: 14px;
+                margin-right: 8px;
+            }
+
+            &_sms {
+                text-align: center;
+                padding-top: 6px;
+                font-size: 21px;
+                margin-left: 7px;
+            }
+        }
+
+        &__text {
+            width: 61%;
         }
     }
 }
@@ -72,12 +104,27 @@
         padding: 7px;
 
         &__logo {
-            height: 26px;
+            height: 24px;
+
+            &_android {
+                width: 19px;
+                margin-left: 5px;
+            }
+
+            &_apple {
+                width: 20px;
+                margin-left: 5px;
+            }
 
             &_sms {
-                font-size: 18px;
+                font-size: 17px;
                 padding-top: 4px;
+                margin-left: 2px;
             }
+        }
+
+        &__text {
+            width: 65%;
         }
 
         &__inner {

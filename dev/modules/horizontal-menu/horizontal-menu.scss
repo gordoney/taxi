@@ -12,12 +12,13 @@
 
     &__container {
         @include container-narrow;
+        padding-left: 0;
     }
 
     &__element {
         display: inline-block;
         vertical-align: middle;
-        padding: 20px;
+        padding: 24px 23px;
     }
 
     &__link {
@@ -38,6 +39,15 @@
         &__link {
             font-size: 24px;
         }
+
+        &__container {
+            @include container-narrow;
+            padding-left: 15px;
+        }
+
+        &__element {
+            padding: 20px 20px;
+        }
     }
 }
 
@@ -51,6 +61,7 @@
 
 @media (max-width: $tablet-device-width-point) {
     .horizontal-menu {
+
         &__element {
             padding: 20px 0;
         }
@@ -58,6 +69,7 @@
         &__menu {
             display: flex;
             justify-content: space-between;
+            padding: 0 20px;
         }
     }
 }

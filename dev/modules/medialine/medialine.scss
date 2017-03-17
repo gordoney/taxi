@@ -1,0 +1,36 @@
+.medialine {
+    text-align: right;
+    font-size: 13px;
+    position: absolute;
+    right: 0px;
+    bottom: 20px;
+
+    &__link {
+        text-decoration: none;
+        transition: 0.2s;
+        color: $black;
+
+        &:hover {
+            color: $green;
+        }
+    }
+}
+
+@media (max-width: $large-device-width-point) {
+    .medialine {
+        bottom: 16px;
+    }
+}
+
+@media (max-width: $small-device-width-point) {
+    .medialine {
+        text-align: left;
+        padding-left: 40px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        &__link {
+            color: $green;
+        }
+    }
+}

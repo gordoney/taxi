@@ -6,6 +6,7 @@ import './index.html';
 import './modules/header/header';
 import './modules/big-banner/big-banner';
 import './modules/footer/footer';
+import './modules/medialine/medialine';
 
 import './mobile.html';
 import './inner.html';

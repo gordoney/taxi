@@ -8,8 +8,18 @@
 
     &_black {
         .app-buttons__app-button {
-            background-color: $black;
+            background-color: $black-opacity;
             box-shadow: none;
+        }
+    }
+}
+
+@media (max-width: $small-device-width-point) {
+    .app-buttons {
+        &_black {
+            .app-buttons__app-button {
+                width: 33%;
+            }
         }
     }
 }

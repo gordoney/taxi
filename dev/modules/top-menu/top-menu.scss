@@ -13,6 +13,7 @@
     font-weight: 300;
     padding: 20px 0;
     z-index: 1;
+    right: 30px;
 
     &__link {
         padding: 15px 30px;
@@ -29,12 +30,11 @@
     }
 
     &__line {
-        height: 8px;
-        width: 100%;
+        height: 11px;
         background-color: $white;
         display: block;
         transition: 0.2s;
-        width: 43px;
+        width: 68px;
 
         &:nth-child(1) {
             transform-origin: right top;
@@ -45,12 +45,12 @@
         }
 
         &:nth-child(2) {
-            margin: 8px 0;
+            margin: 11px 0;
         }
     }
 
     &__menu-button {
-        width: 65px;
+        width: 88px;
         background-color: $green;
         padding: 8px;
         outline: none;
@@ -61,21 +61,21 @@
         border: 3px solid transparent;
 
         &_active {
-            background-color: $white;
+            background-color: $green;
             border: 3px solid $white;
 
             .top-menu__line {
-                background-color: $green;
+                background-color: $white;
             }
 
             .top-menu__line:nth-child(1){
-            	transform: translate(0, -8px) rotate(-45deg) scalex(1.6);
+            	transform: translate(-11px, -1px) rotate(-42deg) scalex(1.1);
             }
             .top-menu__line:nth-child(2){
             	opacity: 0;
             }
             .top-menu__line:nth-child(3){
-            	transform: translate(0, 7px) rotate(45deg) scalex(1.6);
+            	transform: translate(-9px, 2px) rotate(42deg) scalex(1.1);
             }
         }
 
@@ -85,9 +85,84 @@
     }
 }
 
+@media (max-width: $large-device-width-point) {
+    .top-menu {
+        font-size: 30px;
+        right: 0;
+
+        &__line {
+            height: 8px;
+            width: 50px;
+
+            &:nth-child(2) {
+                margin: 8px 0;
+            }
+        }
+
+        &__menu-button {
+            width: 72px;
+
+            &_active {
+                .top-menu__line:nth-child(1){
+                	transform: translate(-5px, -3px) rotate(-42deg) scalex(1.2);
+                }
+                .top-menu__line:nth-child(2){
+                	opacity: 0;
+                }
+                .top-menu__line:nth-child(3){
+                	transform: translate(-5px, 3px) rotate(42deg) scalex(1.2);
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: $small-device-width-point) {
     .top-menu {
+        right: 15px;
         font-size: 24px;
+        width: 240px;
+
+        &__link {
+            padding: 11px 28px;
+        }
+    }
+}
+
+@media (max-width: $tablet-device-width-point) {
+    .top-menu {
+        right: 51px;
+    }
+}
+
+@media (max-width: $mobile-device-width-point) {
+    .top-menu {
+        right: 30px;
+        font-size: 26px;
+        width: 275px;
+
+        &__line {
+            height: 6px;
+            width: 37px;
+
+            &:nth-child(2) {
+                margin: 6px 0;
+            }
+        }
+
+        &__menu-button {
+            width: 59px;
+
+            &_active {
+                .top-menu__line:nth-child(1){
+                	transform: translate(-4px, -2px) rotate(-42deg) scalex(1.2);
+                }
+
+                .top-menu__line:nth-child(3){
+                	transform: translate(-4px, 3px) rotate(42deg) scalex(1.2);
+                }
+            }
+        }
     }
 }
 
@@ -96,11 +171,13 @@
         font-size: 18px;
         width: 200px;
         padding: 5px 0;
-        top: 90px;
+        top: 60px;
+        right: 24px;
 
         &__menu-button {
-            width: 55px;
+            width: 40px;
             border: 2px solid transparent;
+            padding: 6px;
 
             &:hover {
                 border: 2px solid $white;
@@ -108,17 +185,13 @@
 
             &_active {
                 .top-menu__line:nth-child(1){
-                	transform: translate(0, 13px) rotate(-45deg) scalex(1.5);
+                	transform: translate(-3px, -4px) rotate(-42deg) scalex(1.2);
                 }
 
                 .top-menu__line:nth-child(3){
-                	transform: translate(0, 5px) rotate(45deg) scalex(1.5);
+                	transform: translate(-3px, 3px) rotate(42deg) scalex(1.2);
                 }
             }
-        }
-
-        &__line {
-            height: 5px;
         }
 
         .top-menu__line:nth-child(2) {
@@ -127,6 +200,15 @@
 
         &__link {
             padding: 10px 20px;
+        }
+
+        &__line {
+            height: 4px;
+            width: 25px;
+
+            &:nth-child(2) {
+                margin: 2px 0;
+            }
         }
     }
 }
