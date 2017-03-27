@@ -14,4 +14,14 @@ $(window).on('load', function() {
     });
 
     $(block).css('height', maxHeight);
+
+    $(window).resize(function () {
+        $(block).each(function () {
+            if (maxHeight < $(this).outerHeight()) {
+                maxHeight = $(this).outerHeight();
+            }
+        });
+
+        $(block).css('height', maxHeight);
+    });
 });

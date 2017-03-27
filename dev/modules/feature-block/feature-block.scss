@@ -55,6 +55,16 @@
     }
 }
 
+.inner-page {
+    .feature-block__title_active {
+        border-bottom: 1px solid $gray-dark;
+    }
+
+    .feature-block__title {
+        margin-bottom: 18px;
+    }
+}
+
 @media (max-width: $large-device-width-point) {
     .feature-block {
         &__title {

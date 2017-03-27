@@ -7,7 +7,7 @@ const $field = '.get-app__field';
 const $errorField = '.get-app__error';
 const $successField = '.get-app__success';
 
-let value = '';
+let value = false;
 let error = false;
 let errorText = '';
 let response = '';
@@ -27,7 +27,7 @@ $(document).ready(function () {
         value = $($field).val();
         response = grecaptcha.getResponse();
 
-        if (!validatePhone(value)) {
+        if (value == '') {
             error = true;
             errorText += 'Укажите верный номер телефона<br>';
         }
@@ -44,7 +44,7 @@ $(document).ready(function () {
             $.ajax({
                 url: '/sms.php',
                 type: 'POST',
-                data: "response=" + response,
+                data: "response=" + response + "&phone=" + value,
                 success: function success(data) {
                     if (data == 'success') {
                         $($successField).html('Спасибо! Ваш запрос успешно отправлен');

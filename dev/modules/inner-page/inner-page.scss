@@ -1,6 +1,6 @@
 .inner-page {
     background-color: $gray;
-    padding: 60px 0;
+    padding: 50px 0 40px 0;
     font-size: 28px;
     color: $gray-dark;
     width: 100%;
@@ -17,6 +17,16 @@
 
     &__form {
         width: 40%;
+        padding-top: 29px;
+
+        /*.form__field {
+            width: 250px;
+            min-width: 250px;
+        }*/
+
+        .form__field-block {
+            padding-bottom: 25px;
+        }
     }
 }
 
@@ -46,13 +56,39 @@
         .feature-block__title {
             border-bottom: 1px solid $gray-dark;
         }
+
+        /*&__form {
+            .form__field {
+                width: 193px;
+                min-width: 193px;
+            }
+        }*/
     }
 }
+
+@media (max-width: $tablet-device-width-point) {
+    /*.inner-page {
+        &__form {
+            .form__field {
+                width: 60%;
+                min-width: 60%;
+            }
+        }
+    }*/
+}
+
 
 @media (max-width: $mobile-device-width-point) {
     .inner-page {
         &__form {
             width: 100%;
+        }
+
+        &__form {
+            .form__field {
+                width: 60%;
+                min-width: 60%;
+            }
         }
     }
 }

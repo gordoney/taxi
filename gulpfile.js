@@ -19,9 +19,6 @@ gulp.task('compile', function() {
     .pipe(rename('style.css'))
     .pipe(gulp.dest('public/components/bitrix/news.list/app-buttons'));    
     
-    gulp.src('public/js/appButtons.js')
-    .pipe(rename('script.js'))
-    .pipe(gulp.dest('public/components/bitrix/news.list/app-buttons-black'));
     
     gulp.src('public/css/appButtons.css')
     .pipe(rename('style.css'))

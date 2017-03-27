@@ -9,6 +9,7 @@ const $button = '.top-menu__menu-button';
 const activeButton = 'top-menu__menu-button_active';
 const $menu = '.top-menu';
 const $buttonAnchor = '.top-menu__link_anchor';
+const $innerPage = '.inner-page';
 
 let anchor = '';
 let block = '';
@@ -32,13 +33,18 @@ $(window).on('load', function () {
         result => {
             headerHeight = result;
 
-            if ($_GET('id')) {
+            if ($_GET('id') && $($innerPage).length == 0) {
                 anchor = $_GET('id');
 
                 block = getBlock("#"+anchor);
+                if (block.length > 0) {
+                    openBlock("#"+anchor);
+                    $('html, body').animate({scrollTop: $(block).offset().top - headerHeight}, 1000);
+                }
 
-                openBlock("#"+anchor);
-                $('html, body').animate({scrollTop: $(block).offset().top - headerHeight}, 1000);
+                if ($("#"+anchor).length > 0) {
+                    $('html, body').animate({scrollTop: $("#"+anchor).offset().top - headerHeight}, 1000);
+                }
             }
         }
     );
@@ -57,6 +63,11 @@ $(window).on('load', function () {
 
         if (block.length > 0) {
             $('html, body').animate({scrollTop: $(block).offset().top - headerHeight}, 1000);
+            return false;
+        }
+
+        if ($("#"+anchor).length > 0) {
+            $('html, body').animate({scrollTop: $("#"+anchor).offset().top - headerHeight}, 1000);
             return false;
         }
     });

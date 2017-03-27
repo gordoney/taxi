@@ -21,7 +21,7 @@
     }
 
     &__block {
-        @include col(0, 12, 6, 6, 6);
+        @include col(12, 12, 6, 6, 6);
         padding: 0 22px;
     }
 
@@ -33,6 +33,7 @@
         line-height: 1.1;
         border-radius: 4px;
         position: relative;
+        color: $gray-dark;
 
         p + p {
             padding-top: 15px;

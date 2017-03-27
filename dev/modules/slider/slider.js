@@ -28,6 +28,8 @@ $(document).ready(function () {
         arrows: false,
         fade: true,
         waitForAnimate: false,
+        autoplay: true,
+        autoplaySpeed: 5000,
     });
 
     $($dot).click(function () {

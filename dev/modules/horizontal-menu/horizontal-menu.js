@@ -3,7 +3,7 @@
 import './horizontal-menu.scss';
 
 import {getBlock} from './../feature-block/feature-block';
-import {promiseHeaderHeight} from './../header/header';
+import {promiseHeaderHeight, promiseHeaderHeightResize} from './../header/header';
 
 const $menu = '.horizontal-menu';
 const $headerFix = '.horizontal-menu__fix';
@@ -13,6 +13,7 @@ let anchor = '';
 let block = '';
 let headerHeight = '';
 let menuHeight = '';
+let resizeTimer;
 
 function setMenuFix ($headerFix, menuHeight) {
     $($headerFix).css('height', menuHeight + 'px');
@@ -40,6 +41,9 @@ $(window).on('load', function () {
             $($menu).css('top', result + 'px');
             headerHeight = result + $($menu).outerHeight();
 
+            menuHeight = $($menu).outerHeight();
+            setMenuFix ($headerFix, menuHeight);
+
             if ($_GET('id')) {
                 anchor = $_GET('id');
 
@@ -50,12 +54,20 @@ $(window).on('load', function () {
         }
     );
 
-    menuHeight = $($menu).outerHeight();
-    setMenuFix ($headerFix, menuHeight);
-
     $(window).resize(function () {
-        menuHeight = $($menu).outerHeight();
-        setMenuFix ($headerFix, menuHeight);
+        clearTimeout(resizeTimer);
+
+        resizeTimer = setTimeout(function() {
+            promiseHeaderHeightResize.then(
+                result => {
+                    $($menu).css('top', result + 'px');
+                    headerHeight = result + $($menu).outerHeight();
+
+                    menuHeight = $($menu).outerHeight();
+                    setMenuFix ($headerFix, menuHeight);
+                }
+            );
+        }, 250);
     });
 
     $($buttonAnchor).click(function (e) {

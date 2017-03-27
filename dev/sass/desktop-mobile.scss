@@ -1,0 +1,42 @@
+@media (max-width: $mobile-device-width-point) {
+    div[class*='container'] {
+        width: 730px;
+        max-width: none !important;
+    }
+
+    .big-banner {
+        background-image: url('./../modules/big-banner/map1920.jpg') !important;
+        background-size: cover !important;
+        padding: 25px 0 36px 0 !important;
+
+        &__info {
+            display: block !important;
+            min-width: 100% !important;
+        }
+
+        &__phone {
+            height: 390px !important;
+            min-height: 390px !important;
+        }
+    }
+
+    .footer, .content, .inner-page, .header, .horizontal-menu {
+        width: 768px !important;
+    }
+
+    .header, .horizontal-menu {
+        position: relative !important;
+    }
+
+    .horizontal-menu {
+        top: 0 !important;
+    }
+
+    .header__fix, .horizontal-menu__fix  {
+        display: none !important;
+    }
+
+    .small-banner {
+        background-color: transparent !important;
+    }
+}

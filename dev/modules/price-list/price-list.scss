@@ -28,6 +28,13 @@
         width: 442px;
         font-size: 26px;
     }
+
+    .inner-page {
+        .price-list {
+            margin-top: 46px;
+            margin-left: 18px;
+        }
+    }
 }
 
 @media (max-width: $small-device-width-point) {

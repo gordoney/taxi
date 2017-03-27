@@ -2,7 +2,7 @@
     text-align: right;
     font-size: 13px;
     position: absolute;
-    right: 0px;
+    right: 20px;
     bottom: 20px;
 
     &__link {
@@ -18,16 +18,17 @@
 
 @media (max-width: $large-device-width-point) {
     .medialine {
-        bottom: 16px;
+        bottom: 8px;
+        right: 55px;
+        width: 120px;
     }
 }
 
 @media (max-width: $small-device-width-point) {
     .medialine {
-        text-align: left;
-        padding-left: 40px;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        text-align: center;
+        bottom: 5px;
+        right: 15px;
 
         &__link {
             color: $green;

@@ -7,6 +7,8 @@ const $headerFix = '.header__fix';
 
 let headerHeight = '';
 let promiseHeaderHeight = '';
+let promiseHeaderHeightResize = '';
+let resizeTimer;
 
 function setHeaderFix (headerFix, headerHeight) {
     $(headerFix).css('height', headerHeight + 'px');
@@ -28,15 +30,19 @@ $(window).on('load', function () {
         }
     );
 
-    $(window).resize(function () {
-        promiseHeaderHeight = setHeaderHeight ($header, headerHeight);
+    $(window).resize(function (e) {
+        clearTimeout(resizeTimer);
 
-        promiseHeaderHeight.then(
-            result => {
-                setHeaderFix ($headerFix, result);
-            }
-        );
+        resizeTimer = setTimeout(function() {
+            promiseHeaderHeightResize = setHeaderHeight ($header, headerHeight);
+
+            promiseHeaderHeightResize.then(
+                result => {
+                    setHeaderFix ($headerFix, result);
+                }
+            );
+        }, 250);
     });
 });
 
-export {promiseHeaderHeight};
+export {promiseHeaderHeight, promiseHeaderHeightResize};

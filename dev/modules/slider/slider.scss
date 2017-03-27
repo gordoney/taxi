@@ -10,8 +10,8 @@
         background-color: $orange;
         font-size: 20px;
         text-align: center;
-        padding: 10px 40px;
-        box-shadow: 5px 5px 8px $black-light;
+        padding: 10px 35px;
+        box-shadow: 5px 5px 12px $black-light;
         line-height: 1.4;
         font-weight: 300;
         text-transform: uppercase;
@@ -20,6 +20,9 @@
         margin-top: 45px;
         margin-left: 49px;
         margin-right: 23px;
+        color: $white;
+        text-decoration: none;
+        transition: 0.2s;
 
         &:first-letter {
             font-size: 27px;
@@ -36,7 +39,7 @@
     }
 
     &__column_dot {
-        @include col(0, 14, 8, 8, 8);
+        @include col(14, 14, 8, 8, 8);
 
         &:nth-child(3) {
             .slider__dot-wrapper {
@@ -47,7 +50,7 @@
     }
 
     &__column_slider {
-        @include col(0, 8, 8, 8, 8);
+        @include col(8, 8, 8, 8, 8);
     }
 
     &__dot-wrapper {
@@ -84,6 +87,7 @@
         vertical-align: middle;
         cursor: pointer;
         line-height: 1.2;
+        color: $gray-dark;
     }
 
     &__phone {
@@ -100,7 +104,7 @@
         height: 495px;
         width: 320px;
         top: 94px;
-        left: 92px;
+        left: 97px;
         z-index: 1;
         position: absolute;
     }
@@ -120,7 +124,7 @@
             content: '';
             position: absolute;
             display: inline-block;
-            box-shadow: 1px 1px 190px $black;
+            box-shadow: 1px 1px 190px $gray-dark;
             border-radius: 50px;
         }
     }
@@ -128,7 +132,7 @@
     &__app-buttons {
         @include push(0, 0, 6, 6, 6);
         @include col(12, 12, 12, 12, 12);
-        padding-top: 30px;
+        padding-top: 60px;
         text-align: center;
         padding-left: 0;
         padding-right: 0;
@@ -138,6 +142,7 @@
 @media (max-width: $large-device-width-point) {
     .slider {
         font-size: 21px;
+        padding: 40px 0 30px 0;
 
         &__dot-wrapper {
             padding-left: 34px;
@@ -165,7 +170,7 @@
             height: 350px;
             width: 226px;
             top: 67px;
-            left: 85px;
+            left: 80px;
             overflow: hidden;
         }
 
@@ -183,6 +188,10 @@
                     margin-left: -50px;
                 }
             }
+        }
+
+        &__app-buttons {
+            padding-top: 30px;
         }
     }
 }
@@ -272,7 +281,7 @@
         }
 
         &__notice {
-            display: block;
+            display: none;
         }
 
         &__dot-wrapper {

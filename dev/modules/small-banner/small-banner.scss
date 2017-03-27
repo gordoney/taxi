@@ -1,7 +1,8 @@
 .small-banner {
     background-color: $gray;
-    padding: 36px 0;
+    padding: 36px 0 56px 0;
     text-align: center;
+    display: none;
 
     &__info-text {
         color: white;
@@ -16,6 +17,9 @@
         width: 339px;
         box-sizing: border-box;
         display: inline-block;
+        text-decoration: none;
+        transition: 0.2s;
+        min-height: 83px;
 
         &:first-letter {
             font-size: 27px;
@@ -23,9 +27,30 @@
     }
 }
 
+.features + .small-banner {
+    padding: 60px 0;
+}
+
+@media (max-width: $tablet-device-width-point) {
+    .small-banner {
+        display: block;
+        padding: 0;
+    }
+
+    .slider__notice + .small-banner {
+        margin-top: 45px;
+    }
+}
+
 @media (max-width: $small-mobile-device-width-point) {
     .small-banner {
-        padding: 44px 40px 35px 40px;
+        padding: 36px 0 56px 0;
+    }
+}
+
+@media (max-width: $small-small-mobile-width-point) {
+    .small-banner {
+        padding: 44px 40px 35px 40px !important;
 
         &__info-text {
             font-size: 14px;
@@ -36,5 +61,9 @@
                 font-size: 18px;
             }
         }
+    }
+
+    .features + .small-banner {
+        padding: 40px !important;
     }
 }

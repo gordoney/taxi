@@ -18,6 +18,7 @@ module.exports = {
         paymentLogos: __dirname + '/dev/modules/payment-logos/payment-logos',
         features: __dirname + '/dev/modules/features/features',
         horizontalMenu: __dirname + '/dev/modules/horizontal-menu/horizontal-menu',
+        desktopMobile: __dirname + '/dev/desktop-mobile',
     }, 
     output: {
         path: __dirname + '/public',

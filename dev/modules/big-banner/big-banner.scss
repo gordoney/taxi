@@ -2,7 +2,7 @@
     background-image: url('./map1920.jpg');
     background-position: center center;
     background-repeat: no-repeat;
-    padding: 67px 0 169px 0;
+    padding: 67px 0 55px 0;
     color: $white;
 
     &__container {
@@ -41,6 +41,10 @@
         border-radius: 4px;
         margin-bottom: 20px;
         margin-left: -30px;
+        display: block;
+        color: $white;
+        text-decoration: none;
+        transition: 0.2s;
 
         &:first-letter {
             font-size: 62px;
@@ -103,10 +107,10 @@
 
 @media (max-width: $tablet-device-width-point) {
     .big-banner {
-        padding: 25px 0 49px 0;
+        padding: 25px 0 36px 0;
 
         &__row {
-            flex-direction: column;
+            display: block;
         }
 
         &__phone {
@@ -117,9 +121,10 @@
 
         &__info-text {
             font-size: 20px;
-            padding: 13px 40px;
+            padding: 13px 35px;
             line-height: 1.6;
             margin-left: 0;
+            display: none;
 
             &:first-letter {
                 font-size: 28px;
@@ -127,7 +132,7 @@
         }
 
         &__info {
-            padding-top: 29px;
+            padding-top: 24px;
         }
     }
 }
@@ -151,11 +156,17 @@
 
 @media (max-width: $small-mobile-device-width-point) {
     .big-banner {
-        padding: 30px 0 14px 0;
+        padding: 40px 0;
 
         &__phone {
             height: 347px;
             min-height: 347px;
         }
+    }
+}
+
+@media (max-width: $small-small-mobile-width-point) {
+    .big-banner {
+        padding: 30px 0 10px 0;
     }
 }
