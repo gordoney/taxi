@@ -13,6 +13,7 @@ let anchor = '';
 let block = '';
 let headerHeight = '';
 let menuHeight = '';
+let promiseHorizontalHeight = '';
 let resizeTimer;
 
 function setMenuFix ($headerFix, menuHeight) {
@@ -41,9 +42,6 @@ $(window).on('load', function () {
             $($menu).css('top', result + 'px');
             headerHeight = result + $($menu).outerHeight();
 
-            menuHeight = $($menu).outerHeight();
-            setMenuFix ($headerFix, menuHeight);
-
             if ($_GET('id')) {
                 anchor = $_GET('id');
 
@@ -54,6 +52,13 @@ $(window).on('load', function () {
         }
     );
 
+    promiseHorizontalHeight = new Promise((resolve) => {
+        menuHeight = $($menu).outerHeight();
+        setMenuFix ($headerFix, menuHeight);
+
+        resolve(menuHeight);
+    })
+
     $(window).resize(function () {
         clearTimeout(resizeTimer);
 
@@ -62,11 +67,11 @@ $(window).on('load', function () {
                 result => {
                     $($menu).css('top', result + 'px');
                     headerHeight = result + $($menu).outerHeight();
-
-                    menuHeight = $($menu).outerHeight();
-                    setMenuFix ($headerFix, menuHeight);
                 }
             );
+
+            menuHeight = $($menu).outerHeight();
+            setMenuFix ($headerFix, menuHeight);
         }, 250);
     });
 
@@ -81,3 +86,5 @@ $(window).on('load', function () {
         }
     });
 });
+
+export {promiseHorizontalHeight};

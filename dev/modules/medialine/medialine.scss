@@ -26,12 +26,7 @@
 
 @media (max-width: $small-device-width-point) {
     .medialine {
-        text-align: center;
         bottom: 5px;
         right: 15px;
-
-        &__link {
-            color: $green;
-        }
     }
 }

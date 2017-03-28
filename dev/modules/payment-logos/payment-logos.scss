@@ -15,6 +15,14 @@
 
     &__img {
         height: 49px;
+        vertical-align: middle;
+        position: relative;
+        top: -2px;
+    }
+
+    &__link {
+        color: $black;
+        text-decoration: none;
     }
 }
 

@@ -27,6 +27,7 @@
             padding: 0 15px;
             box-sizing: border-box;
             transition: 0.2s;
+            font-family: 'arial';
 
             &:focus {
                 border: 3px solid $green;
@@ -41,9 +42,10 @@
             outline: none;
             color: $gray-dark;
             font-size: 28px;
-            padding: 0 15px;
+            padding: 7px 15px;
             box-sizing: border-box;
             transition: 0.2s;
+            font-family: 'arial';
 
             &:focus {
                 border: 3px solid $green;
@@ -87,6 +89,10 @@
             input {
                 font-size: 22px;
             }
+
+            textarea {
+                font-size: 22px;
+            }
         }
 
         &__button {
@@ -101,6 +107,10 @@
             input {
                 font-size: 17px;
                 height: 40px;
+            }
+
+            textarea {
+                font-size: 17px;
             }
         }
 
