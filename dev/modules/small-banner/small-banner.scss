@@ -42,20 +42,49 @@
     }
 }
 
+@media (max-width: $mobile-device-width-point) {
+    .small-banner {
+        padding: 10px 0 10px 0;
+
+        &__info-text {
+            font-size: 14px;
+            padding: 4px 17px;
+            min-height: 40px;
+            width: auto;
+
+            &:first-letter {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
 @media (max-width: $small-mobile-device-width-point) {
     .small-banner {
-        padding: 36px 0 56px 0;
+        padding: 10px 0 10px 0;
+
+        &__info-text {
+            font-size: 14px;
+            padding: 4px 17px;
+            min-height: 40px;
+            width: auto;
+
+            &:first-letter {
+                font-size: 18px;
+            }
+        }
     }
 }
 
 @media (max-width: $small-small-mobile-width-point) {
     .small-banner {
-        padding: 44px 40px 35px 40px !important;
+        padding: 10px 0 10px 0 !important;
 
         &__info-text {
             font-size: 14px;
             padding: 10px 20px;
             width: 226px;
+            min-height: 64px;
 
             &:first-letter {
                 font-size: 18px;

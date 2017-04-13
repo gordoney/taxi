@@ -13,8 +13,8 @@
     }
 
     &__info {
-        @include col(8, 8, 8, 6, 6);
-        @include push(4, 4, 0, 1, 0);
+        @include col(14, 8, 8, 6, 6);
+        @include push(1, 4, 0, 1, 0);
         line-height: 1.2;
         font-size: 24px;
 
@@ -30,8 +30,8 @@
     }
 
     &__menu {
-        @include col(6, 10, 4, 4, 6);
-        @include push(8, 4, 0, 1, 0);
+        @include col(8, 10, 4, 4, 6);
+        @include push(1, 4, 0, 1, 0);
         padding-left: 22px;
     }
 

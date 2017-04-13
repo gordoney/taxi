@@ -73,3 +73,15 @@
         }
     }
 }
+
+@media (max-width: $small-mobile-device-width-point) {
+    .horizontal-menu {
+        display: none;
+        height: 0;
+
+        &__fix {
+            display: none;
+            height: 0;
+        }
+    }
+}

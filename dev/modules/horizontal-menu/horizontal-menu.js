@@ -4,6 +4,7 @@ import './horizontal-menu.scss';
 
 import {getBlock} from './../feature-block/feature-block';
 import {promiseHeaderHeight, promiseHeaderHeightResize} from './../header/header';
+import isMobile from 'ismobilejs';
 
 const $menu = '.horizontal-menu';
 const $headerFix = '.horizontal-menu__fix';
@@ -37,30 +38,50 @@ function scrollPage(block, headerHeight) {
 }
 
 $(window).on('load', function () {
+    if (isMobile.phone && $(window).outerWidth() > 450) {
+        $($menu).css('display', 'none');
+        $($headerFix).css('display', 'none');
+    } else {
+        $($menu).css('display', 'fixed');
+        $($headerFix).css('display', 'block');
+    }
+
     promiseHeaderHeight.then(
         result => {
             $($menu).css('top', result + 'px');
             headerHeight = result + $($menu).outerHeight();
 
-            if ($_GET('id')) {
+            /*if ($_GET('id')) {
                 anchor = $_GET('id');
 
                 block = getBlock("#"+anchor);
 
                 scrollPage(block, headerHeight);
-            }
+            }*/
         }
     );
 
     promiseHorizontalHeight = new Promise((resolve) => {
-        menuHeight = $($menu).outerHeight();
-        setMenuFix ($headerFix, menuHeight);
+        if ($($menu).length > 0) {
+            menuHeight = $($menu).outerHeight();
+            setMenuFix ($headerFix, menuHeight);
+        } else {
+            menuHeight = 0;
+        }
 
         resolve(menuHeight);
     })
 
     $(window).resize(function () {
         clearTimeout(resizeTimer);
+
+        if (isMobile.phone && $(window).outerWidth() > 450) {
+            $($menu).css('display', 'none');
+            $($headerFix).css('display', 'none');
+        } else {
+            $($menu).css('display', 'fixed');
+            $($headerFix).css('display', 'block');
+        }
 
         resizeTimer = setTimeout(function() {
             promiseHeaderHeightResize.then(

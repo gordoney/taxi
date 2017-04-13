@@ -27,7 +27,7 @@ function getBlock (element) {
 }
 
 $(document).ready(function () {
-    if (isMobile.phone && $($disablePage).length == 0) {
+    if (isMobile.phone) {
         $($button).click(function () {
             if (!$(this).hasClass(buttonDisable)) {
                 $(this).toggleClass(buttonActive);

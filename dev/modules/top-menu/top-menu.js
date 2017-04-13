@@ -5,6 +5,7 @@ import './top-menu.scss';
 import {openBlock, getBlock} from './../feature-block/feature-block.js';
 import {promiseHeaderHeight} from './../header/header.js';
 import {promiseHorizontalHeight} from './../horizontal-menu/horizontal-menu.js';
+import isMobile from 'ismobilejs';
 
 
 const $button = '.top-menu__menu-button';
@@ -39,17 +40,18 @@ $(window).on('load', function () {
         horizontalHeight = results[0];
         headerHeight = results[1];
 
-        if ($_GET('id') && $($innerPage).length == 0) {
+        if ($_GET('id')) {
             anchor = $_GET('id');
 
             block = getBlock("#"+anchor);
+
             if (block.length > 0) {
                 openBlock("#"+anchor);
-                $('html, body').animate({scrollTop: $(block).offset().top - headerHeight - horizontalHeight}, 1000);
-            }
-
-            if ($("#"+anchor).length > 0) {
-                $('html, body').animate({scrollTop: $("#"+anchor).offset().top - headerHeight - horizontalHeight}, 1000);
+                if (isMobile.phone) {
+                    $('html, body').animate({scrollTop: $(block).offset().top}, 1000);
+                } else {
+                    $('html, body').animate({scrollTop: $(block).offset().top - headerHeight - horizontalHeight}, 1000);
+                }
             }
         }
     });
@@ -67,12 +69,11 @@ $(window).on('load', function () {
         block = getBlock("#"+anchor);
 
         if (block.length > 0) {
-            $('html, body').animate({scrollTop: $(block).offset().top - headerHeight - horizontalHeight}, 1000);
-            return false;
-        }
-
-        if ($("#"+anchor).length > 0) {
-            $('html, body').animate({scrollTop: $("#"+anchor).offset().top - headerHeight - horizontalHeight}, 1000);
+            if (isMobile.phone) {
+                $('html, body').animate({scrollTop: $(block).offset().top}, 1000);
+            } else {
+                $('html, body').animate({scrollTop: $(block).offset().top - headerHeight - horizontalHeight}, 1000);
+            }
             return false;
         }
     });
